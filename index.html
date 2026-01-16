@@ -1,0 +1,1580 @@
+<html lang="en-GB" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Root Aesthetics London - Premier Aesthetic Clinic led by Dr. Anju Mehta. Specialising in natural enhancements, anti-wrinkle treatments, and dermal fillers in London.">
+    <title>Root Aesthetics | Dr. Anju Mehta | London Aesthetic Clinic</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    letterSpacing: {
+                        tighter: '-0.04em',
+                        tight: '-0.02em',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: "cv11", "ss01";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .map-grayscale {
+            filter: grayscale(100%) opacity(0.8);
+            transition: filter 0.3s ease;
+        }
+        .map-grayscale:hover {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        /* Mobile nav dropdown animation */
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 320ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease;
+        }
+        .mobile-menu.open {
+            max-height: 420px; /* large enough for menu content */
+            opacity: 1;
+        }
+
+        /* Before / After compare styles */
+        .compare-left {
+            width: 50%;
+            transition: width 240ms ease;
+            position: relative;
+            z-index: 1;
+        }
+        .compare-right {
+            flex: 1 1 0%;
+        }
+        .compare-handle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 9999px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(18, 18, 18, 0.12);
+            border: 2px solid rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: ew-resize;
+            transition: left 120ms ease, opacity 160ms ease;
+            opacity: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .compare-handle::after {
+            content: '';
+            width: 2px;
+            height: 14px;
+            background: #e5e7eb;
+            border-radius: 1px;
+        }
+        /* enable when comparing */
+        .group.is-comparing .compare-handle {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* hide the hover "Tap to compare" overlay while comparing */
+        .group.is-comparing .tap-overlay {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
+        /* Fix: ensure "Tap to compare" overlay sits above the left pane (compare-left)
+           but below the handle so it is fully visible and interactive on hover. */
+        .tap-overlay {
+            z-index: 2;              /* above .compare-left (z-index:1) */
+            pointer-events: none;    /* default non-interactive until hover */
+        }
+        .group:hover .tap-overlay,
+        .group:focus-within .tap-overlay {
+            pointer-events: auto;    /* allow hover/focus interactions when visible */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fafaf9; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+
+        ::selection { background: #e7e5e4; color: #1c1917; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans selection:bg-stone-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 glass-nav transition-all duration-300" >
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" >
+            <a href="#" class="text-lg font-semibold tracking-tighter text-stone-900 flex items-center gap-2 group">
+                <img src="images/RootAesthetics.png" alt="RootsAesthetics" width="100px">
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#results" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Results</a>
+                <a href="#treatments" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Treatments</a>
+                <a href="#about" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Dr. Mehta</a>
+                <a href="#booking" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#booking" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-stone-900 text-white text-xs font-medium rounded-full hover:bg-stone-800 hover:shadow-lg hover:shadow-stone-200/50 transition-all duration-300">
+                    Book Consultation
+                </a>
+                <button id="mobileMenuButton" aria-expanded="false" class="md:hidden p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+                    <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="mobile-menu md:hidden absolute left-0 right-0 top-full bg-white border-t border-stone-100 shadow-lg z-50">
+            <div class="px-6 py-4 flex flex-col gap-3">
+                <a href="#results" class="text-sm font-medium text-stone-700 hover:text-stone-900">Results</a>
+                <a href="#treatments" class="text-sm font-medium text-stone-700 hover:text-stone-900">Treatments</a>
+                <a href="#about" class="text-sm font-medium text-stone-700 hover:text-stone-900">Dr. Mehta</a>
+                <a href="#booking" class="text-sm font-medium text-stone-700 hover:text-stone-900">Contact</a>
+                <a href="#booking" class="mt-2 inline-flex items-center justify-center px-4 py-2 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-40 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-200 bg-white/50 mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs font-medium text-stone-500 tracking-wide uppercase">Now Available in London</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter text-stone-900 leading-tight mb-8">
+                Science meets <br>
+                <span class="text-stone-400">natural artistry.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-stone-500 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Doctor-led aesthetic medicine in the heart of London. Dedicated to subtle, transformative results that respect your unique anatomy.
+            </p>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <!-- Floating CTA: replaces "Start Your Journey" -->
+                <a id="floatingCTA" href="#booking" aria-label="Book Appointment"
+                   class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-3 bg-stone-800 text-white text-sm font-medium rounded-full hover:bg-stone-800 transition-all duration-300 shadow-lg flex items-center justify-center">
+                    Book Appointment
+                </a>
+                <a href="#treatments" class="w-full md:w-auto px-8 py-3.5 bg-white border border-stone-200 text-stone-700 text-sm font-medium rounded-full hover:bg-stone-50 transition-all duration-300">
+                    View Treatments
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-stone-200/40 to-stone-100/40 rounded-full blur-3xl -z-10 opacity-60"></div>
+    </header>
+<div class="border-y border-stone-200 bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 py-8 overflow-hidden">
+        <!-- Option 1: Continuous scrolling from right to left -->
+        <div class="relative" >
+            <div class="brand-marquee" >
+                <div class="marquee-content" >
+                    <!-- Brand logos will duplicate automatically via CSS -->
+                    <div class="brand-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/General_Medical_Council_logo.svg" alt="General Medical Council (GMC)">
+                        <span class="sr-only">GMC Registered</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://ukstudycentre.co.uk/wp-content/uploads/2018/03/Tatler_logo_text.png" alt="Featured in TATLER">
+                        <span class="sr-only">Featured in Tatler 2025</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://www.cosmeticskinclinic.com/wp-content/themes/csc/img/cosmeticskinclinic-logo-stacked.png" alt="Harley Street">
+                        <span class="sr-only">Working in the Cosmetic Skin Clinic Harley Street</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://aestheticsjournal.com/wp-content/uploads/2024/09/AestheticsAwards2025-logo-FULL-DATES-2.png" alt="Aesthetics Awards 2025">
+                        <span class="sr-only">Aesthetics Awards 2025</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://aesthetics.today/wp-content/uploads/AT-logo-240px.webp" alt="Aesthetics Today">
+                        <span class="sr-only">Aesthetics Today</span>
+                    </div>
+                </div>
+                <div class="marquee-content" >
+                    <!-- Brand logos will duplicate automatically via CSS -->
+                    <div class="brand-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/General_Medical_Council_logo.svg" alt="General Medical Council (GMC)">
+                        <span class="sr-only">GMC Registered</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://ukstudycentre.co.uk/wp-content/uploads/2018/03/Tatler_logo_text.png" alt="Featured in TATLER">
+                        <span class="sr-only">Featured in Tatler 2025</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://www.cosmeticskinclinic.com/wp-content/themes/csc/img/cosmeticskinclinic-logo-stacked.png" alt="Harley Street">
+                        <span class="sr-only">Working in the Cosmetic Skin Clinic Harley Street</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://aestheticsjournal.com/wp-content/uploads/2024/09/AestheticsAwards2025-logo-FULL-DATES-2.png" alt="Aesthetics Awards 2025">
+                        <span class="sr-only">Aesthetics Awards 2025</span>
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://aesthetics.today/wp-content/uploads/AT-logo-240px.webp" alt="Aesthetics Today">
+                        <span class="sr-only">Aesthetics Today</span>
+                    </div>
+                </div>
+               
+            </div>
+            
+            <!-- Gradient overlays -->
+            <div class="marquee-overlay left-overlay"></div>
+            <div class="marquee-overlay right-overlay"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Marquee container */
+    .brand-marquee {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        gap: 4rem;
+    }
+
+    /* Marquee content */
+    .marquee-content {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        justify-content: space-around;
+        min-width: 100%;
+        gap: 4rem;
+        animation: scroll-left 30s linear infinite;
+    }
+
+    /* Brand logo styling */
+    .brand-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: auto;
+        opacity: 0.6;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+    }
+
+    .brand-logo:hover img {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    /* Scroll animation */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Gradient overlays */
+    .marquee-overlay {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .left-overlay {
+        left: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, transparent 100%);
+    }
+
+    .right-overlay {
+        right: 0;
+        background: linear-gradient(to left, rgba(255,255,255,0.5) 0%, transparent 100%);
+    }
+
+    /* Pause animation on hover */
+    .brand-marquee:hover .marquee-content {
+        animation-play-state: paused;
+    }
+
+    /* Accessibility */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .marquee-content {
+            gap: 3rem;
+            animation-duration: 20s;
+        }
+        
+        .brand-logo img {
+            height: 2rem;
+        }
+        
+        .marquee-overlay {
+            width: 50px;
+        }
+    }
+</style>
+
+    <!-- Google Ratings Section -->
+    <section class="py-16 bg-white border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
+                <!-- Google Logo Representation -->
+                <div class="w-12 h-12 bg-white border border-stone-200 rounded-full flex items-center justify-center shadow-sm text-xl font-bold text-stone-800">
+                    G
+                </div>
+                
+                <div class="flex flex-col gap-1">
+                    <div class="flex items-center justify-center md:justify-start gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
+                        <span class="ml-2 font-semibold text-stone-900">4.9/5 Excellent</span>
+                    </div>
+                    <p class="text-sm text-stone-500">Based on 150+ verified patient reviews. London's top-rated aesthetic clinic.</p>
+                </div>
+                
+                <div class="hidden md:block w-px h-12 bg-stone-200 mx-4"></div>
+                
+                <div class="max-w-md">
+                    <p class="text-sm italic text-stone-600">"Dr. Mehta is incredibly professional. The results are so natural, nobody knows I've had anything done—they just say I look rested."</p>
+                    <p class="text-xs font-semibold text-stone-900 mt-2">— Sarah J., Anti-Wrinkle Treatment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- About Dr. Mehta - Tabbed Version -->
+<section id="about" class="py-24 bg-stone-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <!-- Left Column - Image & Quick Info -->
+            <div class="sticky top-24">
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-white border border-stone-100 relative shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-stone-50 to-stone-100/30"></div>
+                    <div class="absolute inset-0 flex items-center justify-center p-8">
+                        <img src="images/Dr-Anju-Meta-CSC-610x690.png" 
+                             alt="Dr. Anju Mehta - MBBS, MD, Level 7 Diploma"
+                             class="w-full h-full object-contain object-center">
+                    </div>
+                </div>
+                
+                <!-- Quick Info Cards -->
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="text-xs text-stone-500 mb-1">Experience</div>
+                        <div class="text-2xl font-bold text-stone-900">20+</div>
+                        <div class="text-xs text-stone-600">Years Clinical</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                        <div class="text-xs text-stone-500 mb-1">GMC Number</div>
+                        <div class="text-lg font-bold text-stone-900">7102978</div>
+                        <div class="text-xs text-stone-600">Registered</div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <!-- Right Column - Content with Tabs -->
+            <div>
+                <div class="inline-flex items-center gap-2 text-stone-500 text-xs font-medium uppercase tracking-widest mb-4">
+                    <span class="w-8 h-[1px] bg-stone-300"></span> About the Specialist
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-stone-900 mb-2">
+                    Dr. Anju Mehta
+                </h1>
+                <div class="text-xl text-stone-600 font-semibold mb-6 border-l-4 border-stone-300 pl-4 py-1">
+                    MBBS, MD, Level 7 Diploma
+                </div>
+                
+                <!-- Tabs Navigation -->
+                <div class="flex space-x-1 border-b border-stone-200 mb-8">
+                    <button class="tab-btn active px-4 py-3 text-sm font-medium text-stone-700 border-b-2 border-stone-900 transition-colors" data-tab="overview">
+                        Overview
+                    </button>
+                    <button class="tab-btn px-4 py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors" data-tab="treatments">
+                        Treatments
+                    </button>
+                    <button class="tab-btn px-4 py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors" data-tab="credentials">
+                        Credentials
+                    </button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="tab-pane active space-y-6 text-stone-600 leading-relaxed">
+                        <p class="text-lg text-stone-700 font-normal">
+                            Dr. Anju Mehta brings more than <span class="font-semibold text-stone-900">20 years of clinical experience</span> as an Anaesthetist working in the NHS and internationally to her aesthetics practice.
+                        </p>
+                        
+                        <p>
+                            She ventured into the field of Aesthetics after completing the Ofqual-regulated and JCCP-approved postgraduate Level 7 diploma in injectables from one of the leading providers and now works exclusively in the aesthetics sector.
+                        </p>
+                        
+                        <div class="bg-gradient-to-r from-stone-50 to-white p-6 rounded-xl border border-stone-200 my-8">
+                            <div class="text-stone-500 text-sm font-medium uppercase tracking-widest mb-3">Her Philosophy</div>
+                            <blockquote class="text-xl italic text-stone-700 border-l-4 border-stone-300 pl-6 py-2">
+                                "She takes a highly personalised and ethical approach to treating all her patients, ensuring a natural rejuvenated look."
+                            </blockquote>
+                        </div>
+                        
+                        <p>
+                            Dr. Mehta is an extremely skilled medical aesthetics doctor who has a special interest in regenerative medicine. Her calm and composed demeanour along with meticulous attention to detail makes her very popular with all her patients thus creating long term patient journeys.
+                        </p>
+                        
+                        <p>
+                            Committed to continuous professional development, Dr. Anju Mehta stays abreast of the latest advancements in aesthetic medicine to provide cutting-edge treatments with the highest standards of care.
+                        </p>
+                        
+                        
+                    </div>
+                    
+                    <!-- Treatments Tab -->
+                    <div id="treatments-tab" class="tab-pane hidden">
+                        <div class="mb-6">
+                            <div class="text-lg font-medium text-stone-800 mb-4">Specialised Aesthetic Treatments</div>
+                            <p class="text-stone-600 mb-6">Dr. Mehta offers a comprehensive range of evidence-based aesthetic treatments with a focus on natural, rejuvenating results.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Botox & Anti-Wrinkle</div>
+                                <div class="text-sm text-stone-600">Precision treatment for fine lines and wrinkles</div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Dermal Fillers</div>
+                                <div class="text-sm text-stone-600">Volume restoration and contour enhancement</div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Profhilo®</div>
+                                <div class="text-sm text-stone-600">Skin remodelling and bio-revitalisation</div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Profhilo Structura®</div>
+                                <div class="text-sm text-stone-600">Advanced skin restructuring treatment</div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Polynucleotides</div>
+                                <div class="text-sm text-stone-600">Cellular regeneration and repair</div>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
+                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Hyperhidrosis</div>
+                                <div class="text-sm text-stone-600">Excessive sweating treatment</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
+                            <div class="text-stone-700 font-medium mb-2">Consultation Process</div>
+                            <p class="text-sm text-stone-600 mb-4">Each treatment begins with a thorough consultation to understand your aesthetic goals and develop a personalised treatment plan.</p>
+                            <a href="tel:03300575425" class="text-sm font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1">
+                                Book your consultation today
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Credentials Tab -->
+                    <div id="credentials-tab" class="tab-pane hidden">
+                        <div class="mb-6">
+                            <div class="text-lg font-medium text-stone-800 mb-4">Professional Credentials & Memberships</div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-medium mb-3">Medical Qualifications</div>
+                                <ul class="space-y-2 text-stone-600">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>MBBS (Bachelor of Medicine, Bachelor of Surgery)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>MD (Doctor of Medicine)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>Level 7 Diploma in Injectables (Ofqual-regulated, JCCP-approved)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-medium mb-3">Professional Registrations</div>
+                                <ul class="space-y-2 text-stone-600">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>Full registration with The General Medical Council (GMC Number: 7102978)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>Licensed to practice in the United Kingdom</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-medium mb-3">Professional Memberships</div>
+                                <ul class="space-y-2 text-stone-600">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>Member of the British Medical Association (BMA)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span>Member of the Aesthetics Complications Expert group (ACE)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-medium mb-3">Clinical Experience</div>
+                                <p class="text-stone-600">
+                                    Over 20 years of clinical experience as an Anaesthetist in the NHS and international healthcare settings, providing a solid foundation for safe and effective aesthetic practice.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Tab Styles */
+    .tab-btn.active {
+        color: #1c1917;
+        border-bottom-color: #1c1917;
+    }
+    
+    .tab-pane {
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Image hover effect */
+    .group:hover img {
+        transform: scale(1.05);
+    }
+    
+    /* Sticky positioning for larger screens */
+    @media (min-width: 768px) {
+        .sticky {
+            position: sticky;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality for the second version
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and panes
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.add('hidden'));
+                
+                // Add active class to clicked button and corresponding pane
+                this.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.remove('hidden');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+    });
+</script>
+    <!-- Before & After Section -->
+    <section id="results" class="py-24 bg-white border-t border-stone-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-stone-900 mb-4">Real Results</h2>
+                    <p class="text-stone-500 font-light text-lg">Subtle corrections, profound confidence. Browse our patient gallery.</p>
+                </div>
+                <a href="Real-Stories/index.html" class="text-sm font-medium text-stone-900 border-b border-stone-200 hover:border-stone-900 pb-0.5 transition-all">View Full Gallery</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[16/9] rounded-xl overflow-hidden bg-stone-100 border border-stone-100 mb-4">
+                        <div class="absolute inset-0 flex">
+                            <div class="w-1/2 h-full bg-stone-200 relative border-r border-white" style="background-image: url(images/images\ copy.jpeg); background-size: 100%;">
+                                <span class="absolute top-4 left-4 text-[10px] font-bold tracking-widest uppercase text-stone-500 bg-white/80 px-2 py-1 rounded-md backdrop-blur-sm">Before</span>
+                            </div>
+                            <div class="w-1/2 h-full bg-stone-100 relative" style="background-image: url(images/images.jpeg); background-size: 100%;">
+                                <span class="absolute top-4 right-4 text-[10px] font-bold tracking-widest uppercase text-stone-900 bg-white/80 px-2 py-1 rounded-md backdrop-blur-sm">After</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                             <div class="bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-medium shadow-sm">Tap to compare</div>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-stone-900">Non-Surgical Rhinoplasty</h3>
+                    <p class="text-sm text-stone-500 mt-1">Immediate correction of dorsal hump using hyaluronic acid filler.</p>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[16/9] rounded-xl overflow-hidden bg-stone-100 border border-stone-100 mb-4">
+                        <div class="absolute inset-0 flex">
+                            <div class="w-1/2 h-full bg-stone-200 relative border-r border-white" style="background-image: url(images/images\ \(1\)\ copy.jpeg); background-size: 100%;">
+                                <span class="absolute top-4 left-4 text-[10px] font-bold tracking-widest uppercase text-stone-500 bg-white/80 px-2 py-1 rounded-md backdrop-blur-sm">Before</span>
+                            </div>
+                            <div class="w-1/2 h-full bg-stone-100 relative" style="background-image: url(images/images\ \(1\).jpeg); background-size: 100%;">
+                                <span class="absolute top-4 right-4 text-[10px] font-bold tracking-widest uppercase text-stone-900 bg-white/80 px-2 py-1 rounded-md backdrop-blur-sm">After</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" >
+                             <div class="bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-medium shadow-sm">Tap to compare</div>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-stone-900">Lip Enhancement</h3>
+                    <p class="text-sm text-stone-500 mt-1">0.7ml definition and hydration for a natural profile balance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Treatments Section -->
+    <section id="treatments" class="py-24 md:py-32 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mb-16">
+                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-stone-900 mb-4">Curated Treatments</h2>
+                <p class="text-stone-500 font-light text-lg">Medical-grade procedures tailored to your skin health and aesthetic goals.</p>
+            </div>
+
+            <!-- Highlights Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                <!-- Card 1 -->
+                     <div class="bg-white rounded-xl p-8 border border-stone-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                        <a href="Anti-Wrinkle-Injections/index.html">
+                            <div class="w-12 h-12 bg-stone-50 rounded-lg flex items-center justify-center mb-6">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-stone-700"></i>
+                            </div>
+                            <h3 class="text-xl font-medium text-stone-900 mb-3 tracking-tight">Anti-Wrinkle Injections</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed mb-6">
+                                Reduce fine lines and wrinkles with precision-placed neuromodulators.
+                            </p>
+                            <a href="#booking" class="inline-flex items-center text-xs font-semibold text-stone-900 border-b border-stone-200 hover:border-stone-900 pb-0.5 transition-all">Book Now</a>
+                        </a>
+                     </div>
+                     <div class="bg-white rounded-xl p-8 border border-stone-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                        <a href="Dermal-Fillers/index.html">
+                            <div class="w-12 h-12 bg-stone-50 rounded-lg flex items-center justify-center mb-6">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-stone-700"></i>
+                            </div>
+                            <h3 class="text-xl font-medium text-stone-900 mb-3 tracking-tight">Dermmal Fillers</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed mb-6">
+                               Restore lost volume and define contours. Hyaluronic acid fillers for lips, cheeks, and jawline.
+                            </p>
+                            <a href="#booking" class="inline-flex items-center text-xs font-semibold text-stone-900 border-b border-stone-200 hover:border-stone-900 pb-0.5 transition-all">Book Now</a>
+                        </a>
+                     </div>
+                     <div class="bg-white rounded-xl p-8 border border-stone-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                        <a href="Skin-Boosters/index.html">
+                            <div class="w-12 h-12 bg-stone-50 rounded-lg flex items-center justify-center mb-6">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-stone-700"></i>
+                            </div>
+                            <h3 class="text-xl font-medium text-stone-900 mb-3 tracking-tight">Skin Boosters</h3>
+                            <p class="text-sm text-stone-500 leading-relaxed mb-6">
+                                Profhilo and Polynucleotides to improve hydration, texture, and elasticity.
+                            </p>
+                            <a href="#booking" class="inline-flex items-center text-xs font-semibold text-stone-900 border-b border-stone-200 hover:border-stone-900 pb-0.5 transition-all">Book Now</a>
+                        </a>
+                     </div>
+
+               
+            </div>
+
+            <!-- Comprehensive List -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 border border-stone-100 shadow-sm">
+                <h3 class="text-2xl font-medium tracking-tight text-stone-900 mb-8 border-b border-stone-100 pb-6">All Treatments</h3>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="font-semibold text-stone-900 mb-6 flex items-center gap-2 text-sm uppercase tracking-wide">
+                            <i data-lucide="syringe" class="w-4 h-4"></i> Injectables
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Anti-Wrinkle (1 Area)</span>
+                                <span class="text-xs text-stone-400">from £195</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Anti-Wrinkle (3 Areas)</span>
+                                <span class="text-xs text-stone-400">from £295</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Lip Enhancement (0.5ml)</span>
+                                <span class="text-xs text-stone-400">from £250</span>
+                            </li>
+                             <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Lip Enhancement (1ml)</span>
+                                <span class="text-xs text-stone-400">from £350</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Cheek Contouring</span>
+                                <span class="text-xs text-stone-400">from £350</span>
+                            </li>
+                             <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Jawline Definition</span>
+                                <span class="text-xs text-stone-400">from £400</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="font-semibold text-stone-900 mb-6 flex items-center gap-2 text-sm uppercase tracking-wide">
+                            <i data-lucide="sparkle" class="w-4 h-4"></i> Rejuvenation
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Profhilo (1 Session)</span>
+                                <span class="text-xs text-stone-400">£300</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Profhilo (Course of 2)</span>
+                                <span class="text-xs text-stone-400">£550</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Polynucleotides (Eyes)</span>
+                                <span class="text-xs text-stone-400">from £300</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Microneedling (Face)</span>
+                                <span class="text-xs text-stone-400">£200</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div>
+                        <h4 class="font-semibold text-stone-900 mb-6 flex items-center gap-2 text-sm uppercase tracking-wide">
+                            <i data-lucide="droplets" class="w-4 h-4"></i> Skin Health
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Chemical Peel (Lite)</span>
+                                <span class="text-xs text-stone-400">£95</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Chemical Peel (Advanced)</span>
+                                <span class="text-xs text-stone-400">£150</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Medical Facial</span>
+                                <span class="text-xs text-stone-400">£120</span>
+                            </li>
+                            <li class="flex items-center justify-between group cursor-pointer">
+                                <span class="text-sm text-stone-600 group-hover:text-stone-900 transition-colors">Consultation</span>
+                                <span class="text-xs text-stone-400">£50*</span>
+                            </li>
+                             <li class="mt-4 text-[10px] text-stone-400 italic">
+                                *Redeemable against treatment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+<section class="py-24 bg-white overflow-hidden border-t border-stone-100">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-stone-900 mb-2">Follow the Journey</h2>
+        <a href="#" class="text-stone-500 hover:text-stone-900 text-sm flex items-center justify-center gap-2 transition-colors group">
+            @dranju.m 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:scale-110 transition-transform">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- Video Post 1 -->
+            <!-- <div class="group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400"></div> -->
+                <!-- Video thumbnail with play icon -->
+                <!-- <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none" class="w-8 h-8 ml-1">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div> -->
+                <!-- Video badge -->
+                <!-- <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="w-3 h-3">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span>0:45</span>
+                </div>
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div> -->
+                <!-- Hover overlay -->
+                <!-- <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">256</span>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Image Post 2 -->
+            <div class="group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <!-- Actual image with placeholder fallback -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-300"></div>
+                <img src="images/Social Media/SnapInsta.to_554466760_17878739694403934_8077092708461775190_n.jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">124</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image Post 3 -->
+            <div class="group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-400"></div>
+                <img src="images/Social Media/SnapInsta.to_557439775_17879166969403934_5932029795392615876_n.jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">89</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Additional Posts (Initially hidden, shown with View More) -->
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/SnapInsta.to_574509374_17883684519403934_2041448511076312254_n.jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/SnapInsta.to_587492959_17885142435403934_7445743964570453984_n.jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/SnapInsta.to_588539201_17886512067403934_3067587010632071413_n.jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/491452918_17858839581403934_3264755443154386498_n..jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/475954132_17846901981403934_6762501993390002844_n..jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block group relative aspect-square bg-stone-100 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-400"></div>
+                <img src="images/Social Media/476761573_17848325019403934_2375458232141906301_n..jpg" 
+                     alt="Instagram post" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition-colors duration-300"></div>
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 text-white">
+                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="font-bold text-sm">78</span>
+                    </div>
+                </div>
+            </div>
+            
+        
+        
+    </div>
+</section>
+
+<!-- Lightbox Modal for viewing content -->
+<div id="lightboxModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full max-h-[90vh]">
+        <button id="closeLightbox" class="absolute -top-12 right-0 text-white hover:text-stone-300 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <!-- Video Player -->
+        <div id="videoContainer" class="hidden w-full h-full">
+            <video id="lightboxVideo" controls class="w-full h-auto max-h-[80vh] rounded-lg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Image Viewer -->
+        <div id="imageContainer" class="hidden">
+            <img id="lightboxImage" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg">
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // View More Button functionality
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
+        const hiddenPosts = document.querySelectorAll('.hidden');
+        
+        viewMoreBtn.addEventListener('click', function() {
+            // Toggle hidden posts
+            hiddenPosts.forEach(post => {
+                post.classList.toggle('hidden');
+                post.classList.toggle('md:block');
+            });
+            
+            // Change button text and icon
+            if (viewMoreBtn.querySelector('span').textContent === 'View More') {
+                viewMoreBtn.querySelector('span').textContent = 'Show Less';
+                viewMoreBtn.querySelector('svg').innerHTML = `
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                `;
+            } else {
+                viewMoreBtn.querySelector('span').textContent = 'View More';
+                viewMoreBtn.querySelector('svg').innerHTML = `
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                `;
+            }
+            
+            // Smooth scroll to keep button in view after showing more content
+            setTimeout(() => {
+                viewMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        });
+        
+        // Lightbox functionality
+        const lightboxModal = document.getElementById('lightboxModal');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const videoContainer = document.getElementById('videoContainer');
+        const imageContainer = document.getElementById('imageContainer');
+        
+        // Sample video URLs (replace with your actual video URLs)
+        const videoUrls = [
+            'images/Social Media/SnapInsta.to_AQMAuvIy-jyXDoL0jZ1kkbTBjXJuzAu2w-jVOOcbE2t9PP642qxn-u4yHQZdjfc8WFKvPOoegPGHUJIcMir08GzEK-9VfoOAFPEoZPw.mp4',
+            'images/Social Media/SnapInsta.to_AQMbHvdTh64r0xmZeewhsUblrPN_1wYD03ERAajSMEXeULipNb9f8o5eRhZVYXn-d203gL1TBzIkbKy0CMYPWdugVgbMFQlEMjlAEmw.mp4',
+            'images/Social Media/SnapInsta.to_AQMrSrl8WxM3juPbBx3Rrc2va2gtUnLqMP1H1mYJOWBYu1eKqf8oVevTQ5KsaMWhLgzDHkE6NHmqHYNigDpgptnSKQgzp_82yDwNUg8.mp4',
+            'images/Social Media/SnapInsta.to_AQMWsIhQzHeCrcsqDLeF52olLn7M0woOyi9NwB_9COStZspB8Fyr73hqkC4AMDWf0-MgmV14zgOu4M8LXdJRCzVSTkSQSmm-ztP-UVE.mp4',
+            'images/Social Media/SnapInsta.to_AQOfIRxwQWBGlndY7rCfCd3O9uefj4cuWaPCtdW_uhBev7vS9t7pqCiMORNxdy25orFy1wKbxUH0ovW431-K7weMihi9SOr1MuBRYO8.mp4',
+            'images/Social Media/SnapInsta.to_AQOrPasx1-2st-dEqt0_XvEVWTeV4-_iFRAgmnwrbSz1lslyTobdZm7d0mJbrjHnT84Lh4kJwg7D_0QLC6e-ptdtZxk6-04Ar-WlbQE.mp4'
+        ];
+        
+        // Sample image URLs (from Unsplash)
+        const imageUrls = [
+            'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+        ];
+        
+        // Add click events to all posts
+        document.querySelectorAll('.group.relative').forEach((post, index) => {
+            post.addEventListener('click', function() {
+                // Determine if it's a video or image post
+                const isVideoPost = this.querySelector('.absolute.flex.items-center.justify-center') !== null && 
+                                    this.querySelector('img') === null;
+                
+                if (isVideoPost) {
+                    // It's a video post
+                    videoContainer.classList.remove('hidden');
+                    imageContainer.classList.add('hidden');
+                    
+                    // Set video source (using modulo to cycle through sample videos)
+                    const videoIndex = index % videoUrls.length;
+                    lightboxVideo.src = videoUrls[videoIndex];
+                    lightboxVideo.load();
+                    lightboxVideo.play();
+                } else {
+                    // It's an image post
+                    videoContainer.classList.add('hidden');
+                    imageContainer.classList.remove('hidden');
+                    
+                    // Set image source (using modulo to cycle through sample images)
+                    const imgIndex = index % imageUrls.length;
+                    const img = this.querySelector('img');
+                    
+                    // Use the image from the post if available, otherwise use sample
+                    if (img && img.src) {
+                        lightboxImage.src = img.src.replace('500', '1200');
+                    } else {
+                        lightboxImage.src = imageUrls[imgIndex];
+                    }
+                    
+                    lightboxImage.alt = img ? img.alt : 'Instagram post';
+                }
+                
+                // Show the lightbox
+                lightboxModal.classList.remove('hidden');
+                lightboxModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close lightbox
+        closeLightbox.addEventListener('click', function() {
+            lightboxModal.classList.add('hidden');
+            lightboxModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+            
+            // Pause video when closing
+            if (!lightboxVideo.paused) {
+                lightboxVideo.pause();
+            }
+        });
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+                closeLightbox.click();
+            }
+        });
+        
+        // Close lightbox when clicking on the background
+        lightboxModal.addEventListener('click', function(e) {
+            if (e.target === lightboxModal) {
+                closeLightbox.click();
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Custom scrollbar for lightbox */
+    #lightboxModal::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    #lightboxModal::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    
+    #lightboxModal::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+    }
+    
+    #lightboxModal::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Smooth transitions */
+    .group img {
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Lightbox animation */
+    #lightboxModal {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    #lightboxModal.flex {
+        opacity: 1;
+    }
+    
+    #lightboxModal > div {
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+    
+    #lightboxModal.flex > div {
+        transform: scale(1);
+    }
+</style>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-24 md:py-32 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-5 gap-12 lg:gap-24">
+                <!-- Contact Info & Map -->
+                <div class="lg:col-span-2 space-y-8 flex flex-col h-full">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-stone-900 mb-6">Book an Appointment</h2>
+                        <p class="text-stone-500 font-light leading-relaxed">
+                            Take the first step towards your aesthetic goals. Visit us in Central London.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-stone-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-stone-900">Harley Street District</h4>
+                                <p class="text-sm text-stone-500">10 Harley Street<br>London, W1G 9PF</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-stone-200 flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-stone-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-stone-900">Email</h4>
+                                <a href="mailto:info@rootaesthetics.co.uk" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">dranju.mehta1@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed -->
+                    <div class="flex-grow min-h-[250px] rounded-2xl overflow-hidden border border-stone-200 mt-6 shadow-sm relative z-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.698759524036!2d-0.1493486842296068!3d51.51875567963693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad554c335c1%3A0xda2164b934c67c1a!2sHarley%20St%2C%20London!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="map-grayscale absolute inset-0 w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-3">
+                    <form class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-stone-100 h-full">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-2">
+                                <label for="firstName" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">First Name</label>
+                                <input type="text" id="firstName" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 transition-colors text-stone-900 placeholder:text-stone-400 text-sm" placeholder="Jane">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="lastName" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Last Name</label>
+                                <input type="text" id="lastName" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 transition-colors text-stone-900 placeholder:text-stone-400 text-sm" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-2">
+                                <label for="email" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Email</label>
+                                <input type="email" id="email" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 transition-colors text-stone-900 placeholder:text-stone-400 text-sm" placeholder="jane@example.com">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="phone" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Phone</label>
+                                <input type="tel" id="phone" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 transition-colors text-stone-900 placeholder:text-stone-400 text-sm" placeholder="+44 7000 000000">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 mb-8">
+                            <label for="interest" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Treatment of Interest</label>
+                            <div class="relative">
+                                <select id="interest" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 text-stone-900 text-sm appearance-none">
+                                    <option>Consultation (General)</option>
+                                    <option>Anti-Wrinkle Injections</option>
+                                    <option>Dermal Fillers</option>
+                                    <option>Skin Rejuvenation</option>
+                                    <option>Other</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 absolute right-0 top-3 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 mb-8">
+                            <label for="message" class="text-xs font-semibold text-stone-700 uppercase tracking-wide">Message (Optional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-stone-50 border-0 border-b border-stone-200 focus:border-stone-500 focus:ring-0 px-0 py-3 transition-colors text-stone-900 placeholder:text-stone-400 text-sm" placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <div class="space-y-2 mb-8">
+                             <label class="flex items-start gap-3 cursor-pointer group">
+                                <div class="relative flex items-center">
+                                    <input type="checkbox" class="peer h-4 w-4 opacity-0 absolute">
+                                    <div class="w-4 h-4 border border-stone-300 rounded bg-white peer-checked:bg-stone-900 peer-checked:border-stone-900 transition-all flex items-center justify-center">
+                                        <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-stone-500 pt-0.5">I agree to the privacy policy and consent to being contacted regarding my enquiry.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-stone-900 text-white font-medium py-4 rounded-xl hover:bg-stone-800 transition-all duration-300 shadow-lg shadow-stone-200 flex items-center justify-center gap-2">
+                            Request Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="col-span-2 md:col-span-1">
+                     <a href="#" class="text-lg font-semibold tracking-tighter text-stone-900 flex items-center gap-2 mb-6">
+                        <span class="w-6 h-6 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-900">
+                            <span class="font-medium text-[10px]">R</span>
+                        </span>
+                        ROOTAESTHETICS
+                    </a>
+                    <p class="text-xs text-stone-500 leading-relaxed max-w-xs">
+                        Refining beauty through medical excellence. London based aesthetic clinic led by Dr. Anju Mehta.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Treatments</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Anti-Wrinkle</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Dermal Fillers</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Skin Boosters</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Microneedling</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Clinic</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#about" class="hover:text-stone-900 transition-colors">About Dr. Mehta</a></li>
+                        <li><a href="#results" class="hover:text-stone-900 transition-colors">Results</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Connect</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">LinkedIn</a></li>
+                        <li><a href="dranju.mehta1@gmail.com" class="hover:text-stone-900 transition-colors">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-stone-400">
+                    © 2023 Root Aesthetics Ltd. All rights reserved. London, UK.
+                </p>
+                <div class="flex items-center gap-4">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-stone-300"></i>
+                    <span class="text-xs text-stone-400">GMC Registered Doctor</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // render lucide icons then initialise mobile menu
+        lucide.createIcons();
+
+        /* Before / After: Tap-to-compare + drag slider */
+        (function initBeforeAfter() {
+            const groups = Array.from(document.querySelectorAll('.group.cursor-pointer'));
+            groups.forEach(group => {
+                const flexContainer = group.querySelector('.relative > .absolute.inset-0.flex');
+                if (!flexContainer) return;
+
+                // find the two halves (left before, right after)
+                const panes = Array.from(flexContainer.children).filter(c => c.tagName.toLowerCase() === 'div');
+                if (panes.length < 2) return;
+                const left = panes[0];
+                const right = panes[1];
+
+                // mark for CSS targeting and ensure layout
+                left.classList.add('compare-left');
+                right.classList.add('compare-right');
+
+                // add a dedicated class to the tap-overlay node so we can hide it during compare
+                const overlay = group.querySelector('.absolute.inset-0.flex.items-center.justify-center') || group.querySelector('.absolute.inset-0.flex.items-center.justify-center.opacity-0');
+                if (overlay) overlay.classList.add('tap-overlay');
+
+                // insert handle
+                const handle = document.createElement('div');
+                handle.className = 'compare-handle';
+                flexContainer.appendChild(handle);
+
+                // utility to update positions
+                let containerRect = null;
+                function updateHandlePosition(clientX) {
+                    if (!containerRect) containerRect = flexContainer.getBoundingClientRect();
+                    const x = Math.min(Math.max(clientX - containerRect.left, 0), containerRect.width);
+                    const pct = (x / containerRect.width) * 100;
+                    left.style.width = `${pct}%`;
+                    handle.style.left = `calc(${pct}% - 14px)`;
+                }
+
+                // initialize to center
+                function initCenter() {
+                    left.style.width = '50%';
+                    handle.style.left = 'calc(50% - 14px)';
+                }
+                initCenter();
+
+                // toggle compare on tap (but not when starting a drag)
+                let dragging = false;
+                group.addEventListener('click', (e) => {
+                    if (dragging) return;
+                    // don't toggle when clicking on links inside (safety)
+                    if (e.target.closest('a')) return;
+                    group.classList.toggle('is-comparing');
+                    initCenter();
+                });
+
+                // pointer drag logic on handle
+                handle.addEventListener('pointerdown', (e) => {
+                    e.preventDefault();
+                    dragging = false;
+                    containerRect = flexContainer.getBoundingClientRect();
+                    handle.setPointerCapture(e.pointerId);
+                    const startX = e.clientX;
+                    const onMove = (ev) => {
+                        dragging = true;
+                        updateHandlePosition(ev.clientX);
+                    };
+                    const onUp = (ev) => {
+                        handle.releasePointerCapture && handle.releasePointerCapture(ev.pointerId);
+                        window.removeEventListener('pointermove', onMove);
+                        window.removeEventListener('pointerup', onUp);
+                        // small threshold: if not moved, treat as click (toggle)
+                        setTimeout(() => { dragging = false; }, 0);
+                    };
+                    window.addEventListener('pointermove', onMove);
+                    window.addEventListener('pointerup', onUp);
+                    // ensure comparing mode active when dragging starts
+                    group.classList.add('is-comparing');
+                });
+
+                // reset containerRect on resize
+                window.addEventListener('resize', () => { containerRect = null; initCenter(); });
+            });
+        })();
+ 
+        (function initMobileMenu() {
+            const btn = document.getElementById('mobileMenuButton');
+            const menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            // find any icon elements inside the button (supports lucide replacement)
+            const icons = Array.from(btn.querySelectorAll('svg, i'));
+            const [menuIcon, closeIcon] = icons;
+
+            btn.addEventListener('click', () => {
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!isOpen));
+
+                // toggle animated dropdown via .open
+                menu.classList.toggle('open');
+
+                // swap visible icons (if present) — prefer class toggles, fallback to visibility
+                if (menuIcon && closeIcon) {
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                } else {
+                    // fallback: toggle first/last child visibility
+                    const children = Array.from(btn.children);
+                    if (children.length >= 2) {
+                        children[0].classList.toggle('hidden');
+                        children[1].classList.toggle('hidden');
+                    }
+                }
+            });
+        })();
+ 
+         // Simple intersection observer for fade-in animations
+         const observerOptions = {
+             root: null,
+             rootMargin: '0px',
+             threshold: 0.1
+         };
+
+         const observer = new IntersectionObserver((entries, observer) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.classList.add('opacity-100', 'translate-y-0');
+                     entry.target.classList.remove('opacity-0', 'translate-y-10');
+                     observer.unobserve(entry.target);
+                 }
+             });
+         }, observerOptions);
+
+         document.querySelectorAll('section > div').forEach((el) => {
+             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+             observer.observe(el);
+         });
+    </script>
+
+</body></html>

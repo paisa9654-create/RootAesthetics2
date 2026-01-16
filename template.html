@@ -1,0 +1,392 @@
+<html lang="en-GB" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Root Aesthetics London - Premier Aesthetic Clinic led by Dr. Anju Mehta. Specialising in natural enhancements, anti-wrinkle treatments, and dermal fillers in London.">
+    <title>Root Aesthetics | Dr. Anju Mehta | London Aesthetic Clinic</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    letterSpacing: {
+                        tighter: '-0.04em',
+                        tight: '-0.02em',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: "cv11", "ss01";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .map-grayscale {
+            filter: grayscale(100%) opacity(0.8);
+            transition: filter 0.3s ease;
+        }
+        .map-grayscale:hover {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        /* Mobile nav dropdown animation */
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 320ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease;
+        }
+        .mobile-menu.open {
+            max-height: 420px; /* large enough for menu content */
+            opacity: 1;
+        }
+
+        /* Before / After compare styles */
+        .compare-left {
+            width: 50%;
+            transition: width 240ms ease;
+            position: relative;
+            z-index: 1;
+        }
+        .compare-right {
+            flex: 1 1 0%;
+        }
+        .compare-handle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 9999px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(18, 18, 18, 0.12);
+            border: 2px solid rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: ew-resize;
+            transition: left 120ms ease, opacity 160ms ease;
+            opacity: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .compare-handle::after {
+            content: '';
+            width: 2px;
+            height: 14px;
+            background: #e5e7eb;
+            border-radius: 1px;
+        }
+        /* enable when comparing */
+        .group.is-comparing .compare-handle {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* hide the hover "Tap to compare" overlay while comparing */
+        .group.is-comparing .tap-overlay {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
+        /* Fix: ensure "Tap to compare" overlay sits above the left pane (compare-left)
+           but below the handle so it is fully visible and interactive on hover. */
+        .tap-overlay {
+            z-index: 2;              /* above .compare-left (z-index:1) */
+            pointer-events: none;    /* default non-interactive until hover */
+        }
+        .group:hover .tap-overlay,
+        .group:focus-within .tap-overlay {
+            pointer-events: auto;    /* allow hover/focus interactions when visible */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fafaf9; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+
+        ::selection { background: #e7e5e4; color: #1c1917; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans selection:bg-stone-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-lg font-semibold tracking-tighter text-stone-900 flex items-center gap-2 group">
+                ROOTAESTHETICS
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#results" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Results</a>
+                <a href="#treatments" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Treatments</a>
+                <a href="#about" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Dr. Mehta</a>
+                <a href="#booking" class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#booking" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-stone-900 text-white text-xs font-medium rounded-full hover:bg-stone-800 hover:shadow-lg hover:shadow-stone-200/50 transition-all duration-300">
+                    Book Consultation
+                </a>
+                <button id="mobileMenuButton" aria-expanded="false" class="md:hidden p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+                    <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobileMenu" class="mobile-menu md:hidden absolute left-0 right-0 top-full bg-white border-t border-stone-100 shadow-lg z-50">
+            <div class="px-6 py-4 flex flex-col gap-3">
+                <a href="#results" class="text-sm font-medium text-stone-700 hover:text-stone-900">Results</a>
+                <a href="#treatments" class="text-sm font-medium text-stone-700 hover:text-stone-900">Treatments</a>
+                <a href="#about" class="text-sm font-medium text-stone-700 hover:text-stone-900">Dr. Mehta</a>
+                <a href="#booking" class="text-sm font-medium text-stone-700 hover:text-stone-900">Contact</a>
+                <a href="#booking" class="mt-2 inline-flex items-center justify-center px-4 py-2 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+    <a id="floatingCTA" href="#booking" aria-label="Book Appointment"
+       class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-3 bg-stone-800 text-white text-sm font-medium rounded-full hover:bg-stone-800 transition-all duration-300 shadow-lg flex items-center justify-center">
+       Book Appointment
+    </a>
+    
+
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="col-span-2 md:col-span-1">
+                     <a href="#" class="text-lg font-semibold tracking-tighter text-stone-900 flex items-center gap-2 mb-6">
+                        <span class="w-6 h-6 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-900">
+                            <span class="font-medium text-[10px]">R</span>
+                        </span>
+                        ROOTAESTHETICS
+                    </a>
+                    <p class="text-xs text-stone-500 leading-relaxed max-w-xs">
+                        Refining beauty through medical excellence. London based aesthetic clinic led by Dr. Anju Mehta.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Treatments</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Anti-Wrinkle</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Dermal Fillers</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Skin Boosters</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Microneedling</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Clinic</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#about" class="hover:text-stone-900 transition-colors">About Dr. Mehta</a></li>
+                        <li><a href="#results" class="hover:text-stone-900 transition-colors">Results</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-medium text-stone-900 mb-4 text-sm">Connect</h4>
+                    <ul class="space-y-2 text-sm text-stone-500">
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-stone-900 transition-colors">LinkedIn</a></li>
+                        <li><a href="mailto:info@rootaesthetics.co.uk" class="hover:text-stone-900 transition-colors">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-stone-400">
+                    © 2023 Root Aesthetics Ltd. All rights reserved. London, UK.
+                </p>
+                <div class="flex items-center gap-4">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-stone-300"></i>
+                    <span class="text-xs text-stone-400">GMC Registered Doctor</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // render lucide icons then initialise mobile menu
+        lucide.createIcons();
+
+        /* Before / After: Tap-to-compare + drag slider */
+        (function initBeforeAfter() {
+            const groups = Array.from(document.querySelectorAll('.group.cursor-pointer'));
+            groups.forEach(group => {
+                const flexContainer = group.querySelector('.relative > .absolute.inset-0.flex');
+                if (!flexContainer) return;
+
+                // find the two halves (left before, right after)
+                const panes = Array.from(flexContainer.children).filter(c => c.tagName.toLowerCase() === 'div');
+                if (panes.length < 2) return;
+                const left = panes[0];
+                const right = panes[1];
+
+                // mark for CSS targeting and ensure layout
+                left.classList.add('compare-left');
+                right.classList.add('compare-right');
+
+                // add a dedicated class to the tap-overlay node so we can hide it during compare
+                const overlay = group.querySelector('.absolute.inset-0.flex.items-center.justify-center') || group.querySelector('.absolute.inset-0.flex.items-center.justify-center.opacity-0');
+                if (overlay) overlay.classList.add('tap-overlay');
+
+                // insert handle
+                const handle = document.createElement('div');
+                handle.className = 'compare-handle';
+                flexContainer.appendChild(handle);
+
+                // utility to update positions
+                let containerRect = null;
+                function updateHandlePosition(clientX) {
+                    if (!containerRect) containerRect = flexContainer.getBoundingClientRect();
+                    const x = Math.min(Math.max(clientX - containerRect.left, 0), containerRect.width);
+                    const pct = (x / containerRect.width) * 100;
+                    left.style.width = `${pct}%`;
+                    handle.style.left = `calc(${pct}% - 14px)`;
+                }
+
+                // initialize to center
+                function initCenter() {
+                    left.style.width = '50%';
+                    handle.style.left = 'calc(50% - 14px)';
+                }
+                initCenter();
+
+                // toggle compare on tap (but not when starting a drag)
+                let dragging = false;
+                group.addEventListener('click', (e) => {
+                    if (dragging) return;
+                    // don't toggle when clicking on links inside (safety)
+                    if (e.target.closest('a')) return;
+                    group.classList.toggle('is-comparing');
+                    initCenter();
+                });
+
+                // pointer drag logic on handle
+                handle.addEventListener('pointerdown', (e) => {
+                    e.preventDefault();
+                    dragging = false;
+                    containerRect = flexContainer.getBoundingClientRect();
+                    handle.setPointerCapture(e.pointerId);
+                    const startX = e.clientX;
+                    const onMove = (ev) => {
+                        dragging = true;
+                        updateHandlePosition(ev.clientX);
+                    };
+                    const onUp = (ev) => {
+                        handle.releasePointerCapture && handle.releasePointerCapture(ev.pointerId);
+                        window.removeEventListener('pointermove', onMove);
+                        window.removeEventListener('pointerup', onUp);
+                        // small threshold: if not moved, treat as click (toggle)
+                        setTimeout(() => { dragging = false; }, 0);
+                    };
+                    window.addEventListener('pointermove', onMove);
+                    window.addEventListener('pointerup', onUp);
+                    // ensure comparing mode active when dragging starts
+                    group.classList.add('is-comparing');
+                });
+
+                // reset containerRect on resize
+                window.addEventListener('resize', () => { containerRect = null; initCenter(); });
+            });
+        })();
+ 
+        (function initMobileMenu() {
+            const btn = document.getElementById('mobileMenuButton');
+            const menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            // find any icon elements inside the button (supports lucide replacement)
+            const icons = Array.from(btn.querySelectorAll('svg, i'));
+            const [menuIcon, closeIcon] = icons;
+
+            btn.addEventListener('click', () => {
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!isOpen));
+
+                // toggle animated dropdown via .open
+                menu.classList.toggle('open');
+
+                // swap visible icons (if present) — prefer class toggles, fallback to visibility
+                if (menuIcon && closeIcon) {
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                } else {
+                    // fallback: toggle first/last child visibility
+                    const children = Array.from(btn.children);
+                    if (children.length >= 2) {
+                        children[0].classList.toggle('hidden');
+                        children[1].classList.toggle('hidden');
+                    }
+                }
+            });
+        })();
+ 
+         // Simple intersection observer for fade-in animations
+         const observerOptions = {
+             root: null,
+             rootMargin: '0px',
+             threshold: 0.1
+         };
+
+         const observer = new IntersectionObserver((entries, observer) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.classList.add('opacity-100', 'translate-y-0');
+                     entry.target.classList.remove('opacity-0', 'translate-y-10');
+                     observer.unobserve(entry.target);
+                 }
+             });
+         }, observerOptions);
+
+         document.querySelectorAll('section > div').forEach((el) => {
+             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+             observer.observe(el);
+         });
+    </script>
+
+</body></html>
