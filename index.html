@@ -382,244 +382,882 @@
         }
     }
 </style>
-
-    <!-- Google Ratings Section -->
-    <section class="py-16 bg-white border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-                <!-- Google Logo Representation -->
-                <div class="w-12 h-12 bg-white border border-stone-200 rounded-full flex items-center justify-center shadow-sm text-xl font-bold text-stone-800">
-                    G
-                </div>
-                
-                <div class="flex flex-col gap-1">
-                    <div class="flex items-center justify-center md:justify-start gap-1">
-                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-yellow-400"></i>
-                        <span class="ml-2 font-semibold text-stone-900">4.9/5 Excellent</span>
+<!-- Reviews Carousel Section -->
+<section class="py-12 md:py-16 bg-white border-b border-stone-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header with Rating -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-10 md:mb-12">
+            <div class="flex flex-col items-center md:items-start gap-3">
+                <!-- Google Logo with Rating -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white border border-stone-200 rounded-full flex items-center justify-center shadow-sm text-lg md:text-xl font-bold text-stone-800">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
                     </div>
-                    <p class="text-sm text-stone-500">Based on 150+ verified patient reviews. London's top-rated aesthetic clinic.</p>
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-yellow-500">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-yellow-500">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-yellow-500">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-yellow-500">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-yellow-500">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <span class="ml-2 font-bold text-stone-900 text-sm md:text-base">4.9/5 Excellent</span>
+                        </div>
+                        <p class="text-xs text-stone-500 mt-1">Based on 200+ verified Google reviews</p>
+                    </div>
                 </div>
                 
-                <div class="hidden md:block w-px h-12 bg-stone-200 mx-4"></div>
-                
-                <div class="max-w-md">
-                    <p class="text-sm italic text-stone-600">"Dr. Mehta is incredibly professional. The results are so natural, nobody knows I've had anything done—they just say I look rested."</p>
-                    <p class="text-xs font-semibold text-stone-900 mt-2">— Sarah J., Anti-Wrinkle Treatment</p>
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <div class="inline-flex items-center gap-1 bg-green-50 text-green-800 text-xs font-medium px-3 py-1 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                            <path d="M16 10l-6 6-3-3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        GMC Registered
+                    </div>
+                    <div class="inline-flex items-center gap-1 bg-blue-50 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-3 h-3">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Verified Patients
+                    </div>
                 </div>
             </div>
+            
+            <!-- View All Link -->
+            <div class="text-center md:text-right">
+                <a href="#reviews" class="inline-flex items-center gap-2 text-sm font-medium text-stone-700 hover:text-stone-900 transition-colors">
+                    <span>View All Reviews</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
         </div>
-    </section>
-<!-- About Dr. Mehta - Tabbed Version -->
-<section id="about" class="py-24 bg-stone-50 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
+        
+        <!-- Reviews Carousel Container -->
+        <div class="relative">
+            <!-- Gradient Overlays (Shown only when needed) -->
+            <div id="gradient-left" class="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300"></div>
+            <div id="gradient-right" class="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Navigation Buttons (Visible on all screens) -->
+            <button class="carousel-nav carousel-prev absolute left-0 md:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-stone-300 shadow-lg flex items-center justify-center text-stone-700 hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 z-20 opacity-0 pointer-events-none group" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 md:w-6 md:h-6 group-hover:-translate-x-0.5 transition-transform">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            
+            <button class="carousel-nav carousel-next absolute right-0 md:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-stone-300 shadow-lg flex items-center justify-center text-stone-700 hover:bg-stone-50 hover:border-stone-400 transition-all duration-300 z-20 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            
+            <!-- Reviews Carousel -->
+            <div class="reviews-carousel-container overflow-hidden">
+                <div class="reviews-track flex gap-4 md:gap-6 transition-transform duration-500 ease-out">
+                    <!-- Review 1 -->
+                    <div class="review-card flex-shrink-0 w-[300px] md:w-[400px] bg-white border border-stone-200 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-amber-100 to-amber-50 rounded-full flex items-center justify-center text-amber-600 font-semibold">
+                                SJ
+                            </div>
+                            <div>
+                                <div class="font-semibold text-stone-900">Sarah J.</div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-stone-500">Anti-Wrinkle Treatment</span>
+                                    <span class="text-xs text-stone-400">•</span>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm md:text-base text-stone-600 italic leading-relaxed">
+                           <b> "Dr Anju Mehta doesn’t just treat faces, she enhances confidence"</b>
+
+I’ve had the pleasure of being treated by Dr Anju Mehta, and I can confidently say she’s a game-changer in aesthetic medicine.
+Her calm, composed demeanour and honesty instantly puts one.....
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-stone-500">
+                            Posted 2 weeks ago • Harley Street Clinic
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card flex-shrink-0 w-[300px] md:w-[400px] bg-white border border-stone-200 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center text-blue-600 font-semibold">
+                                MK
+                            </div>
+                            <div>
+                                <div class="font-semibold text-stone-900">Michael K.</div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-stone-500">Dermal Fillers</span>
+                                    <span class="text-xs text-stone-400">•</span>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm md:text-base text-stone-600 italic leading-relaxed">
+                           Dr Anju Mehta is outstanding at what she does. She took the time to fully understand my concerns and explained every step clearly. Her calm and honest manner immediately put me at ease. The results are natural and beautifully balanced. I couldn’t recommend her enough.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-stone-500">
+                            Posted 1 month ago • Harley Street Clinic
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="review-card flex-shrink-0 w-[300px] md:w-[400px] bg-white border border-stone-200 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-100 to-purple-50 rounded-full flex items-center justify-center text-purple-600 font-semibold">
+                                LJ
+                            </div>
+                            <div>
+                                <div class="font-semibold text-stone-900">Lucy J.</div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-stone-500">Profhilo Treatment</span>
+                                    <span class="text-xs text-stone-400">•</span>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm md:text-base text-stone-600 italic leading-relaxed">
+                           Dr Anju Mehta doesn’t just offer treatments, she enhances confidence. Her attention to detail and ethical approach truly set her apart. I felt listened to and cared for throughout the process. The results look subtle and very natural. I’m extremely pleased.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-stone-500">
+                            Posted 3 weeks ago • Harley Street Clinic
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 -->
+                    <div class="review-card flex-shrink-0 w-[300px] md:w-[400px] bg-white border border-stone-200 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-full flex items-center justify-center text-emerald-600 font-semibold">
+                                DT
+                            </div>
+                            <div>
+                                <div class="font-semibold text-stone-900">David T.</div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-xs text-stone-500">Hyperhidrosis Treatment</span>
+                                    <span class="text-xs text-stone-400">•</span>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 text-yellow-500">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm md:text-base text-stone-600 italic leading-relaxed">
+                           From consultation to aftercare, Dr Anju Mehta was professional, patient, and thorough. She created a personalised treatment plan tailored to my goals. The improvement was noticeable within days. I feel more confident than ever.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-stone-500">
+                            Posted 2 months ago • Harley Street Clinic
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-8 md:mt-10">
+                <a href="#reviews" class="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white rounded-lg hover:bg-stone-800 transition-colors font-medium text-sm md:text-base">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    Read All 200+ Patient Reviews
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Carousel Container */
+    .reviews-carousel-container {
+        position: relative;
+        overflow: hidden;
+        padding: 8px 0;
+        cursor: grab;
+    }
+
+    .reviews-carousel-container:active {
+        cursor: grabbing;
+    }
+
+    .reviews-track {
+        display: flex;
+        gap: 1rem;
+        will-change: transform;
+    }
+
+    /* Smooth card hover effect */
+    .review-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .review-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Navigation button styles */
+    .carousel-nav {
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-nav:disabled {
+        opacity: 0.3;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .carousel-nav:hover:not(:disabled) {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Gradient overlays - dynamic */
+    .gradient-visible {
+        opacity: 1 !important;
+    }
+
+    .gradient-hidden {
+        opacity: 0 !important;
+    }
+
+    /* Mobile touch indicators */
+    .reviews-carousel-container::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 2px;
+        opacity: 0.5;
+    }
+
+    @media (min-width: 768px) {
+        .reviews-carousel-container::after {
+            display: none;
+        }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+        .review-card {
+            width: 280px !important;
+        }
+        
+        .carousel-nav {
+            top: 40%;
+            width: 36px;
+            height: 36px;
+        }
+        
+        .carousel-prev {
+            left: 8px;
+        }
+        
+        .carousel-next {
+            right: 8px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .review-card {
+            width: 260px !important;
+            padding: 1.25rem;
+        }
+    }
+
+    /* Touch device optimization */
+    @media (hover: none) and (pointer: coarse) {
+        .review-card:hover {
+            transform: none;
+        }
+        
+        .carousel-nav:hover {
+            transform: translateY(-50%);
+        }
+    }
+
+    /* Smooth scrolling */
+    .reviews-track {
+        scroll-behavior: smooth;
+    }
+
+    /* Disable text selection during drag */
+    .reviews-track {
+        user-select: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carouselContainer = document.querySelector('.reviews-carousel-container');
+        const track = document.querySelector('.reviews-track');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const gradientLeft = document.getElementById('gradient-left');
+        const gradientRight = document.getElementById('gradient-right');
+        const reviewCards = document.querySelectorAll('.review-card');
+        
+        let currentPosition = 0;
+        let isDragging = false;
+        let startPosition = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID = 0;
+        const cardWidth = reviewCards[0].offsetWidth + 16; // 16px gap
+        const visibleCards = Math.floor(carouselContainer.offsetWidth / cardWidth);
+        const totalCards = reviewCards.length;
+        const maxPosition = -(totalCards - visibleCards) * cardWidth;
+        
+        // Update gradient visibility based on position
+        function updateGradients() {
+            if (currentPosition >= 0) {
+                gradientLeft.classList.remove('gradient-visible');
+                gradientLeft.classList.add('gradient-hidden');
+                prevBtn.disabled = true;
+            } else {
+                gradientLeft.classList.remove('gradient-hidden');
+                gradientLeft.classList.add('gradient-visible');
+                prevBtn.disabled = false;
+            }
+            
+            if (currentPosition <= maxPosition) {
+                gradientRight.classList.remove('gradient-visible');
+                gradientRight.classList.add('gradient-hidden');
+                nextBtn.disabled = true;
+            } else {
+                gradientRight.classList.remove('gradient-hidden');
+                gradientRight.classList.add('gradient-visible');
+                nextBtn.disabled = false;
+            }
+        }
+        
+        // Move carousel to position
+        function moveCarousel(position) {
+            currentPosition = Math.max(maxPosition, Math.min(0, position));
+            track.style.transform = `translateX(${currentPosition}px)`;
+            updateGradients();
+        }
+        
+        // Next button click
+        nextBtn.addEventListener('click', () => {
+            const newPosition = currentPosition - cardWidth * visibleCards;
+            moveCarousel(newPosition);
+        });
+        
+        // Previous button click
+        prevBtn.addEventListener('click', () => {
+            const newPosition = currentPosition + cardWidth * visibleCards;
+            moveCarousel(newPosition);
+        });
+        
+        // Touch and mouse drag events
+        carouselContainer.addEventListener('mousedown', startDrag);
+        carouselContainer.addEventListener('touchstart', startDrag);
+        
+        function startDrag(e) {
+            isDragging = true;
+            startPosition = getPositionX(e);
+            carouselContainer.style.cursor = 'grabbing';
+            carouselContainer.style.userSelect = 'none';
+            
+            // Cancel any animations
+            cancelAnimationFrame(animationID);
+            
+            // Add move and end listeners
+            carouselContainer.addEventListener('mousemove', drag);
+            carouselContainer.addEventListener('touchmove', drag);
+            carouselContainer.addEventListener('mouseup', endDrag);
+            carouselContainer.addEventListener('mouseleave', endDrag);
+            carouselContainer.addEventListener('touchend', endDrag);
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            const currentPositionX = getPositionX(e);
+            const diff = currentPositionX - startPosition;
+            const newPosition = currentPosition + diff;
+            
+            // Apply drag with momentum
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${newPosition}px)`;
+            
+            // Store for momentum
+            currentTranslate = newPosition;
+        }
+        
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            carouselContainer.style.cursor = 'grab';
+            carouselContainer.style.userSelect = 'auto';
+            
+            // Remove event listeners
+            carouselContainer.removeEventListener('mousemove', drag);
+            carouselContainer.removeEventListener('touchmove', drag);
+            carouselContainer.removeEventListener('mouseup', endDrag);
+            carouselContainer.removeEventListener('mouseleave', endDrag);
+            carouselContainer.removeEventListener('touchend', endDrag);
+            
+            // Apply momentum animation
+            const momentum = currentTranslate - prevTranslate;
+            const newPosition = currentPosition + momentum;
+            
+            // Snap to nearest card
+            const snapPosition = Math.round(newPosition / cardWidth) * cardWidth;
+            
+            // Apply constraints
+            const finalPosition = Math.max(maxPosition, Math.min(0, snapPosition));
+            
+            // Animate to final position
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            moveCarousel(finalPosition);
+            
+            prevTranslate = currentTranslate;
+        }
+        
+        function getPositionX(e) {
+            return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            }
+        });
+        
+        // Initialize
+        updateGradients();
+        
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newCardWidth = reviewCards[0].offsetWidth + 16;
+                const newVisibleCards = Math.floor(carouselContainer.offsetWidth / newCardWidth);
+                const newMaxPosition = -(totalCards - newVisibleCards) * newCardWidth;
+                
+                if (newMaxPosition !== maxPosition) {
+                    currentPosition = Math.max(newMaxPosition, Math.min(0, currentPosition));
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    updateGradients();
+                }
+            }, 250);
+        });
+        
+        // Prevent default touch actions on track
+        track.addEventListener('touchstart', (e) => {
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+        }, { passive: false });
+    });
+</script>
+       
+  <!-- About Dr. Anju Mehta - RootsAesthetics Clinic - SEO Optimized -->
+<section id="about" class="py-16 md:py-24 bg-stone-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- SEO Rich Heading for Search Engines -->
+        <div class="mb-12 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 text-stone-500 text-xs font-medium uppercase tracking-widest mb-4">
+                <span class="w-8 h-[1px] bg-stone-300"></span> Meet Our Medical Director
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-stone-900 mb-3">
+                Dr. Anju Mehta - Lead Aesthetic Doctor at RootsAesthetics
+            </h1>
+            <div class="text-lg md:text-xl text-stone-600 font-semibold mb-4">
+                MBBS, MD, Level 7 Diploma - Expert in Natural Aesthetic Treatments
+            </div>
+            <p class="text-stone-600 max-w-3xl text-sm md:text-base">
+                Leading medical aesthetic doctor at RootsAesthetics Clinic London, specializing in natural-looking 
+                anti-wrinkle treatments, dermal fillers, and regenerative medicine with over 20 years of clinical experience.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <!-- Left Column - Image & Quick Info -->
-            <div class="sticky top-24">
-                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-white border border-stone-100 relative shadow-xl">
+            <div class="lg:sticky lg:top-24">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-white border border-stone-100 relative shadow-xl">
                     <div class="absolute inset-0 bg-gradient-to-br from-stone-50 to-stone-100/30"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-8">
+                    <div class="absolute inset-0 flex items-center justify-center p-6 md:p-8">
                         <img src="images/Dr-Anju-Meta-CSC-610x690.png" 
-                             alt="Dr. Anju Mehta - MBBS, MD, Level 7 Diploma"
-                             class="w-full h-full object-contain object-center">
+                             alt="Dr. Anju Mehta MBBS MD Level 7 Diploma - Lead Doctor at RootsAesthetics Clinic London"
+                             title="Dr. Anju Mehta - Medical Director of RootsAesthetics Clinic"
+                             class="w-full h-full object-contain object-center"
+                             loading="eager">
                     </div>
                 </div>
                 
                 <!-- Quick Info Cards -->
-                <div class="grid grid-cols-2 gap-4 mt-8">
-                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                <div class="grid grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
+                    <div class="bg-white p-3 md:p-4 rounded-xl border border-stone-200 shadow-sm">
                         <div class="text-xs text-stone-500 mb-1">Experience</div>
-                        <div class="text-2xl font-bold text-stone-900">20+</div>
+                        <div class="text-xl md:text-2xl font-bold text-stone-900">20+</div>
                         <div class="text-xs text-stone-600">Years Clinical</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                    <div class="bg-white p-3 md:p-4 rounded-xl border border-stone-200 shadow-sm">
                         <div class="text-xs text-stone-500 mb-1">GMC Number</div>
-                        <div class="text-lg font-bold text-stone-900">7102978</div>
+                        <div class="text-base md:text-lg font-bold text-stone-900">7102978</div>
                         <div class="text-xs text-stone-600">Registered</div>
                     </div>
                 </div>
                 
-                
+                <!-- Mobile Clinic Info (Visible only on mobile) -->
+                <div class="mt-6 md:hidden bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                    <div class="text-sm font-medium text-stone-800 mb-2">Available Clinics</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>RootsAesthetics Harley Street</span>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             
             <!-- Right Column - Content with Tabs -->
             <div>
-                <div class="inline-flex items-center gap-2 text-stone-500 text-xs font-medium uppercase tracking-widest mb-4">
-                    <span class="w-8 h-[1px] bg-stone-300"></span> About the Specialist
+                <!-- Mobile CTA (Visible only on mobile) -->
+                <div class="mb-6 md:hidden">
+                    <a href="tel:03300575425" class="block w-full text-center px-6 py-3 bg-stone-900 text-white rounded-xl hover:bg-stone-800 transition-colors font-medium">
+                        📞 Book Consultation: +44 7580 748097
+                    </a>
                 </div>
-                
-                <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-stone-900 mb-2">
-                    Dr. Anju Mehta
-                </h1>
-                <div class="text-xl text-stone-600 font-semibold mb-6 border-l-4 border-stone-300 pl-4 py-1">
-                    MBBS, MD, Level 7 Diploma
-                </div>
-                
-                <!-- Tabs Navigation -->
-                <div class="flex space-x-1 border-b border-stone-200 mb-8">
-                    <button class="tab-btn active px-4 py-3 text-sm font-medium text-stone-700 border-b-2 border-stone-900 transition-colors" data-tab="overview">
+
+                <!-- Tabs Navigation - Mobile Optimized -->
+                <div class="flex flex-wrap gap-1 border-b border-stone-200 mb-6 md:mb-8">
+                    <button class="tab-btn active px-3 md:px-4 py-2 md:py-3 text-sm font-medium text-stone-700 border-b-2 border-stone-900 transition-colors whitespace-nowrap" data-tab="overview">
                         Overview
                     </button>
-                    <button class="tab-btn px-4 py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors" data-tab="treatments">
+                    <button class="tab-btn px-3 md:px-4 py-2 md:py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors whitespace-nowrap" data-tab="treatments">
                         Treatments
                     </button>
-                    <button class="tab-btn px-4 py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors" data-tab="credentials">
+                    <button class="tab-btn px-3 md:px-4 py-2 md:py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors whitespace-nowrap" data-tab="credentials">
                         Credentials
+                    </button>
+                    <button class="tab-btn px-3 md:px-4 py-2 md:py-3 text-sm font-medium text-stone-500 hover:text-stone-700 transition-colors whitespace-nowrap" data-tab="clinic">
+                        Our Clinic
                     </button>
                 </div>
                 
                 <!-- Tab Content -->
                 <div class="tab-content">
                     <!-- Overview Tab -->
-                    <div id="overview-tab" class="tab-pane active space-y-6 text-stone-600 leading-relaxed">
-                        <p class="text-lg text-stone-700 font-normal">
-                            Dr. Anju Mehta brings more than <span class="font-semibold text-stone-900">20 years of clinical experience</span> as an Anaesthetist working in the NHS and internationally to her aesthetics practice.
+                    <div id="overview-tab" class="tab-pane active space-y-4 md:space-y-6 text-stone-600 leading-relaxed">
+                        <p class="text-base md:text-lg text-stone-700">
+                            <strong>Dr. Anju Mehta</strong> is the <strong>Lead Medical Aesthetic Doctor</strong> at <strong>RootsAesthetics Clinic</strong>, bringing over <strong>20 years of clinical experience</strong> as an NHS Anaesthetist to her aesthetic medicine practice in London.
                         </p>
                         
                         <p>
-                            She ventured into the field of Aesthetics after completing the Ofqual-regulated and JCCP-approved postgraduate Level 7 diploma in injectables from one of the leading providers and now works exclusively in the aesthetics sector.
+                            After completing the prestigious <strong>Ofqual-regulated Level 7 Diploma in injectables</strong> (JCCP-approved), Dr. Mehta transitioned to full-time aesthetic medicine, where she now leads the team at <strong>RootsAesthetics</strong>, specializing in natural-looking, rejuvenating treatments.
                         </p>
                         
-                        <div class="bg-gradient-to-r from-stone-50 to-white p-6 rounded-xl border border-stone-200 my-8">
-                            <div class="text-stone-500 text-sm font-medium uppercase tracking-widest mb-3">Her Philosophy</div>
-                            <blockquote class="text-xl italic text-stone-700 border-l-4 border-stone-300 pl-6 py-2">
-                                "She takes a highly personalised and ethical approach to treating all her patients, ensuring a natural rejuvenated look."
-                            </blockquote>
+                        
+                        
+                        <p>
+                            With a <strong>special interest in regenerative medicine</strong>, Dr. Mehta's meticulous attention to detail and calm, reassuring demeanor have made her one of London's most sought-after aesthetic doctors. Her approach focuses on <strong>long-term patient relationships</strong> and <strong>personalized treatment plans</strong>.
+                        </p>
+                        
+                        <p>
+                            As the <strong>medical lead at RootsAesthetics</strong>, Dr. Mehta ensures all treatments meet the highest medical standards while delivering natural-looking results that enhance rather than transform.
+                        </p>
+
+                        <!-- Mobile Contact CTA -->
+                        <div class="md:hidden mt-8 pt-6 border-t border-stone-200">
+                            <div class="text-center">
+                                <div class="text-lg font-semibold text-stone-900 mb-3">Ready for Your Transformation?</div>
+                                <a href="tel:03300575425" class="inline-block w-full px-6 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors font-medium text-lg">
+                                    Call: +44 7580 748097
+                                </a>
+                                <p class="text-sm text-stone-500 mt-2">RootsAesthetics Harley Street & Stoke Poges</p>
+                            </div>
                         </div>
-                        
-                        <p>
-                            Dr. Mehta is an extremely skilled medical aesthetics doctor who has a special interest in regenerative medicine. Her calm and composed demeanour along with meticulous attention to detail makes her very popular with all her patients thus creating long term patient journeys.
-                        </p>
-                        
-                        <p>
-                            Committed to continuous professional development, Dr. Anju Mehta stays abreast of the latest advancements in aesthetic medicine to provide cutting-edge treatments with the highest standards of care.
-                        </p>
-                        
-                        
                     </div>
                     
                     <!-- Treatments Tab -->
                     <div id="treatments-tab" class="tab-pane hidden">
                         <div class="mb-6">
-                            <div class="text-lg font-medium text-stone-800 mb-4">Specialised Aesthetic Treatments</div>
-                            <p class="text-stone-600 mb-6">Dr. Mehta offers a comprehensive range of evidence-based aesthetic treatments with a focus on natural, rejuvenating results.</p>
+                            <h2 class="text-xl md:text-2xl font-bold text-stone-900 mb-3">
+                                Expert Aesthetic Treatments at RootsAesthetics
+                            </h2>
+                            <p class="text-stone-600 mb-6">
+                                Dr. Anju Mehta specializes in a range of advanced aesthetic treatments designed to deliver natural, rejuvenating results at RootsAesthetics Clinic.
+                            </p>
                         </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Botox & Anti-Wrinkle</div>
-                                <div class="text-sm text-stone-600">Precision treatment for fine lines and wrinkles</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-8">
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Anti-Wrinkle Injections</div>
+                                <div class="text-xs md:text-sm text-stone-600">Botox® for fine lines and wrinkles - natural facial rejuvenation</div>
                             </div>
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Dermal Fillers</div>
-                                <div class="text-sm text-stone-600">Volume restoration and contour enhancement</div>
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Dermal Fillers</div>
+                                <div class="text-xs md:text-sm text-stone-600">Volume restoration, contour enhancement, lip augmentation</div>
                             </div>
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Profhilo®</div>
-                                <div class="text-sm text-stone-600">Skin remodelling and bio-revitalisation</div>
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Profhilo® Treatment</div>
+                                <div class="text-xs md:text-sm text-stone-600">Bio-remodelling for skin hydration and collagen stimulation</div>
                             </div>
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Profhilo Structura®</div>
-                                <div class="text-sm text-stone-600">Advanced skin restructuring treatment</div>
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Profhilo Structura®</div>
+                                <div class="text-xs md:text-sm text-stone-600">Advanced skin restructuring for facial contouring</div>
                             </div>
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Polynucleotides</div>
-                                <div class="text-sm text-stone-600">Cellular regeneration and repair</div>
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Polynucleotide Therapy</div>
+                                <div class="text-xs md:text-sm text-stone-600">Cellular regeneration for skin repair and rejuvenation</div>
                             </div>
-                            <div class="bg-white p-5 rounded-xl border border-stone-200 hover:border-stone-300 transition-colors group">
-                                <div class="text-stone-900 font-medium mb-2 group-hover:text-stone-700">Hyperhidrosis</div>
-                                <div class="text-sm text-stone-600">Excessive sweating treatment</div>
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200 hover:border-amber-300 transition-colors group">
+                                <div class="text-stone-900 font-bold mb-1 md:mb-2 group-hover:text-amber-700">Hyperhidrosis Treatment</div>
+                                <div class="text-xs md:text-sm text-stone-600">Medical solution for excessive sweating</div>
                             </div>
                         </div>
                         
-                        <div class="bg-stone-50 p-6 rounded-xl border border-stone-200">
-                            <div class="text-stone-700 font-medium mb-2">Consultation Process</div>
-                            <p class="text-sm text-stone-600 mb-4">Each treatment begins with a thorough consultation to understand your aesthetic goals and develop a personalised treatment plan.</p>
-                            <a href="tel:03300575425" class="text-sm font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1">
-                                Book your consultation today
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
+                        <div class="bg-amber-50 p-5 md:p-6 rounded-xl border border-amber-200">
+                            <div class="text-stone-900 font-bold mb-2">Personalized Consultation at RootsAesthetics</div>
+                            <p class="text-sm text-stone-700 mb-4">
+                                Every RootsAesthetics patient receives a comprehensive consultation with Dr. Mehta to develop a customized treatment plan aligned with your aesthetic goals and facial anatomy.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:03300575425" class="flex-1 text-center px-4 py-3 bg-stone-900 text-white rounded-lg hover:bg-stone-800 transition-colors font-medium">
+                                    Book Consultation
+                                </a>
+                                <a href="#contact" class="flex-1 text-center px-4 py-3 bg-white text-stone-900 border border-stone-300 rounded-lg hover:bg-stone-50 transition-colors font-medium">
+                                    View Locations
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Credentials Tab -->
                     <div id="credentials-tab" class="tab-pane hidden">
                         <div class="mb-6">
-                            <div class="text-lg font-medium text-stone-800 mb-4">Professional Credentials & Memberships</div>
+                            <h2 class="text-xl md:text-2xl font-bold text-stone-900 mb-3">
+                                Dr. Anju Mehta's Medical Credentials
+                            </h2>
+                            <p class="text-stone-600 mb-6">
+                                The highest medical qualifications and continuous professional development ensure exceptional care at RootsAesthetics Clinic.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4 md:space-y-6">
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-bold mb-2 md:mb-3">Medical Qualifications</div>
+                                <ul class="space-y-2 text-stone-700">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>MBBS</strong> - Bachelor of Medicine, Bachelor of Surgery</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>MD</strong> - Doctor of Medicine</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>Level 7 Diploma</strong> in Injectable Aesthetics (Ofqual-regulated, JCCP-approved)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-bold mb-2 md:mb-3">Professional Registrations</div>
+                                <ul class="space-y-2 text-stone-700">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>General Medical Council</strong> - Full Registration (GMC Number: 7102978)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>Licensed to Practice</strong> in the United Kingdom</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-bold mb-2 md:mb-3">Professional Memberships</div>
+                                <ul class="space-y-2 text-stone-700">
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>British Medical Association (BMA)</strong> - Member</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>Aesthetics Complications Expert Group (ACE)</strong> - Member</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 md:p-5 rounded-xl border border-stone-200">
+                                <div class="text-stone-900 font-bold mb-2 md:mb-3">Clinical Experience</div>
+                                <p class="text-stone-700">
+                                    <strong>Over 20 years of clinical experience</strong> including extensive work as an NHS Anaesthetist, providing a foundation of medical expertise and patient safety that underpins all treatments at RootsAesthetics Clinic.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Clinic Tab -->
+                    <div id="clinic-tab" class="tab-pane hidden">
+                        <div class="mb-6">
+                            <h2 class="text-xl md:text-2xl font-bold text-stone-900 mb-3">
+                                RootsAesthetics Clinic - London's Premier Aesthetic Destination
+                            </h2>
+                            <p class="text-stone-600 mb-6">
+                                Led by Dr. Anju Mehta, RootsAesthetics offers premium aesthetic treatments in two convenient London locations.
+                            </p>
                         </div>
                         
                         <div class="space-y-6">
-                            <div class="bg-white p-5 rounded-xl border border-stone-200">
-                                <div class="text-stone-900 font-medium mb-3">Medical Qualifications</div>
-                                <ul class="space-y-2 text-stone-600">
+                            
+                            
+                            
+                            <div class="bg-white p-5 md:p-6 rounded-xl border border-stone-200 shadow-sm">
+                                <div class="text-stone-900 font-bold mb-3">Why Choose RootsAesthetics?</div>
+                                <ul class="space-y-2 text-stone-700">
                                     <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
-                                        <span>MBBS (Bachelor of Medicine, Bachelor of Surgery)</span>
+                                        <span><strong>Medical Leadership</strong> - Led by GMC-registered Dr. Anju Mehta</span>
                                     </li>
                                     <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
-                                        <span>MD (Doctor of Medicine)</span>
+                                        <span><strong>Natural Results</strong> - Focus on subtle, rejuvenating outcomes</span>
                                     </li>
                                     <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
-                                        <span>Level 7 Diploma in Injectables (Ofqual-regulated, JCCP-approved)</span>
+                                        <span><strong>Safety First</strong> - Highest medical safety standards</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-600 mt-0.5 shrink-0">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        <span><strong>Personalized Care</strong> - Custom treatment plans for each patient</span>
                                     </li>
                                 </ul>
                             </div>
                             
-                            <div class="bg-white p-5 rounded-xl border border-stone-200">
-                                <div class="text-stone-900 font-medium mb-3">Professional Registrations</div>
-                                <ul class="space-y-2 text-stone-600">
-                                    <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <span>Full registration with The General Medical Council (GMC Number: 7102978)</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <span>Licensed to practice in the United Kingdom</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-white p-5 rounded-xl border border-stone-200">
-                                <div class="text-stone-900 font-medium mb-3">Professional Memberships</div>
-                                <ul class="space-y-2 text-stone-600">
-                                    <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <span>Member of the British Medical Association (BMA)</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-stone-500 mt-0.5 shrink-0">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <span>Member of the Aesthetics Complications Expert group (ACE)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="bg-white p-5 rounded-xl border border-stone-200">
-                                <div class="text-stone-900 font-medium mb-3">Clinical Experience</div>
-                                <p class="text-stone-600">
-                                    Over 20 years of clinical experience as an Anaesthetist in the NHS and international healthcare settings, providing a solid foundation for safe and effective aesthetic practice.
-                                </p>
+                            <!-- Contact Section -->
+                            <div class="text-center p-6 rounded-xl bg-gradient-to-r from-stone-900 to-stone-800 text-white">
+                                <div class="text-xl font-bold mb-3">Book Your Consultation Today</div>
+                                <div class="text-2xl md:text-3xl font-bold mb-4">+44 7580 748097‬</div>
+                                <p class="text-stone-300 mb-4">RootsAesthetics Harley Street & Stoke Poges</p>
+                                <a href="tel:03300575425" class="inline-block px-8 py-3 bg-amber-600 text-white rounded-xl hover:bg-amber-700 transition-colors font-bold">
+                                    Call to Book Appointment
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -629,11 +1267,105 @@
     </div>
 </section>
 
+<!-- Schema.org Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "RootsAesthetics Clinic",
+  "medicalSpecialty": "Aesthetic Medicine",
+  "description": "Premier aesthetic medicine clinic in London led by Dr. Anju Mehta, specializing in natural-looking anti-wrinkle treatments, dermal fillers, and regenerative medicine.",
+  "founder": {
+    "@type": "Person",
+    "name": "Dr. Anju Mehta",
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "MBBS, MD, Level 7 Diploma",
+    "hasCredential": "MBBS, MD, Level 7 Diploma in Injectable Aesthetics",
+    "memberOf": ["General Medical Council", "British Medical Association", "Aesthetics Complications Expert Group"],
+    "medicalSpecialty": "Aesthetic Medicine"
+  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "streetAddress": "Harley Street",
+      "addressRegion": "London"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Stoke Poges",
+      "addressRegion": "Buckinghamshire"
+    }
+  ],
+  "telephone": "+44-330-057-5425",
+  "openingHours": "Mo-Fr 09:00-20:00, Sa 10:00-16:00",
+  "priceRange": "£££",
+  "image": "images/Dr-Anju-Meta-CSC-610x690.png",
+  "url": "https://rootsaestheticsclinic.com"
+}
+</script>
+
 <style>
+    /* Responsive Design Enhancements */
+    @media (max-width: 768px) {
+        .sticky {
+            position: static !important;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            min-width: 0;
+            text-align: center;
+            padding: 10px 8px;
+            font-size: 13px;
+        }
+        
+        .tab-content {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .grid-cols-2 {
+            grid-template-columns: 1fr;
+        }
+        
+        /* Mobile touch-friendly buttons */
+        .tab-btn {
+            padding: 12px 8px;
+        }
+        
+        /* Improved mobile spacing */
+        section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        
+        /* Mobile image optimization */
+        .aspect-[3/4] {
+            aspect-ratio: 3/4;
+        }
+    }
+    
+    /* Tablet Responsive */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .max-w-7xl {
+            max-width: 90%;
+        }
+        
+        .gap-16 {
+            gap: 2rem;
+        }
+        
+        .text-5xl {
+            font-size: 2.5rem;
+        }
+    }
+    
     /* Tab Styles */
     .tab-btn.active {
         color: #1c1917;
-        border-bottom-color: #1c1917;
+        border-bottom-color: #d97706; /* Amber-600 for brand consistency */
+        font-weight: 600;
     }
     
     .tab-pane {
@@ -643,7 +1375,7 @@
     @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(5px);
         }
         to {
             opacity: 1;
@@ -651,18 +1383,90 @@
         }
     }
     
-    /* Image hover effect */
-    .group:hover img {
-        transform: scale(1.05);
+    /* Enhanced hover effects */
+    .group:hover .text-stone-900 {
+        color: #d97706; /* Amber-600 */
     }
     
-    /* Sticky positioning for larger screens */
-    @media (min-width: 768px) {
-        .sticky {
-            position: sticky;
+    /* Improve button contrast for mobile */
+    @media (max-width: 640px) {
+        .bg-stone-900 {
+            background-color: #1c1917;
+        }
+        
+        .bg-amber-600 {
+            background-color: #d97706;
+        }
+    }
+    
+    /* Better text hierarchy for mobile */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        
+        p {
+            font-size: 0.9375rem;
+            line-height: 1.6;
         }
     }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and panes
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.add('hidden'));
+                
+                // Add active class to clicked button and corresponding pane
+                this.classList.add('active');
+                const activePane = document.getElementById(`${tabId}-tab`);
+                activePane.classList.remove('hidden');
+                activePane.classList.add('active');
+                
+                // Scroll to top of tab content on mobile
+                if (window.innerWidth < 768) {
+                    activePane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Mobile-specific enhancements
+        if (window.innerWidth < 768) {
+            // Add touch feedback to tab buttons
+            tabBtns.forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.opacity = '0.7';
+                });
+                btn.addEventListener('touchend', function() {
+                    this.style.opacity = '1';
+                });
+            });
+            
+            // Optimize image loading on mobile
+            const doctorImage = document.querySelector('img[alt*="Dr. Anju Mehta"]');
+            if (doctorImage) {
+                doctorImage.loading = 'eager';
+                doctorImage.setAttribute('importance', 'high');
+            }
+        }
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1427,7 +2231,7 @@
 
             <div class="border-t border-stone-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-xs text-stone-400">
-                    © 2023 Roots Aesthetics Ltd. All rights reserved. London, UK.
+                    © 2023 Root Aesthetics Ltd. All rights reserved. London, UK.
                 </p>
                 <div class="flex items-center gap-4">
                     <i data-lucide="shield-check" class="w-4 h-4 text-stone-300"></i>
